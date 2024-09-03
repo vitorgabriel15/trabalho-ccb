@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Criar Playlist Personalizada</title>
+    <link rel="stylesheet" href="playlist.css">
+</head>
+<body>
+    <header>
+        <h1>Criar Playlist Personalizada</h1>
+        <nav>
+            <a href="index.html">Página Inicial</a>
+            <a href="user.html">Cadastrar Usuário</a>
+        </nav>
+    </header>
+    <main>
+        <form id="playlist-form">
+            <h2>Criação de Playlist com Base no Clima</h2>
+            <label for="location">Localização:</label>
+            <input type="text" id="location" name="location" placeholder="Ex: São Paulo" required>
+            
+            <button type="submit">Criar Playlist</button>
+        </form>
+        
+        <h3>Playlist Criada:</h3>
+        <div id="playlist-result">
+            <!-- Resultados serão exibidos aqui -->
+        </div>
+    </main>
+    <script src="script.js"></script>
+</body>
+</html>
+
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Playlist Personalizada</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f3f4f6;
+            margin: 0;
+            padding: 20px;
+        }
+
+        h1 {
+            text-align: center;
+            color: #333;
+        }
+
+        .playlist-container {
+            display: flex;
+            justify-content: space-between;
+            margin-top: 40px;
+        }
+
+        .playlist-section {
+            width: 30%;
+            background-color: #fff;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        }
+
+        .playlist-section h2 {
+            margin-top: 0;
+            color: #ff8c00;
+        }
+
+        .playlist-section ul {
+            list-style-type: none;
+            padding: 0;
+        }
+
+        .playlist-section li {
+            padding: 8px;
+            margin-bottom: 10px;
+            background-color: #f0f0f0;
+            border-radius: 4px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .playlist-section li:hover {
+            background-color: #e2e2e2;
+        }
+
+        .favorite {
+            color: red;
+        }
+
+        /* Estilos para dispositivos móveis */
+        @media (max-width: 768px) {
+            .playlist-container {
+                flex-direction: column;
+            }
+
+            .playlist-section {
+                width: 100%;
+                margin-bottom: 20px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <h1>Minha Playlist</h1>
+
+    <div class="playlist-container">
+        <!-- Músicas Mais Ouvidas -->
+        <div class="playlist-section">
+            <h2>Músicas Mais Ouvidas</h2>
+            <ul>
+                <li>Música 1 <span>🎵</span></li>
+                <li>Música 2 <span>🎵</span></li>
+                <li>Música 3 <span>🎵</span></li>
+            </ul>
+        </div>
+
+        <!-- Músicas Menos Ouvidas -->
+        <div class="playlist-section">
+            <h2>Músicas Menos Ouvidas</h2>
+            <ul>
+                <li>Música 4 <span>🎧</span></li>
+                <li>Música 5 <span>🎧</span></li>
+                <li>Música 6 <span>🎧</span></li>
+            </ul>
+        </div>
+
+        <!-- Músicas Curtidas -->
+        <div class="playlist-section">
+            <h2>Músicas Curtidas</h2>
+            <ul>
+                <li>Música 7 <span class="favorite">❤️</span></li>
+                <li>Música 8 <span class="favorite">❤️</span></li>
+                <li>Música 9 <span class="favorite">❤️</span></li>
+            </ul>
+        </div>
+    </div>
+</body>
+</html>
