@@ -5,6 +5,183 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Criar Playlist Personalizada</title>
     <link rel="stylesheet" href="playlist.css">
+    <style>
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background-color: #f0f2f5;
+            margin: 0;
+            padding: 0;
+        }
+
+        header {
+            background: linear-gradient(135deg, #1db954, #1ed760);
+            color: #fff;
+            padding: 20px;
+            text-align: center;
+            border-radius: 0 0 15px 15px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+        }
+
+        header h1 {
+            margin: 0;
+            font-size: 2.5em;
+            font-weight: bold;
+        }
+
+        nav {
+            margin-top: 10px;
+        }
+
+        nav a {
+            color: #fff;
+            text-decoration: none;
+            margin: 0 15px;
+            font-weight: bold;
+            transition: color 0.3s ease;
+        }
+
+        nav a:hover {
+            color: #d1d1d1;
+        }
+
+        main {
+            max-width: 1200px;
+            margin: 40px auto;
+        }
+
+        form {
+            background-color: #fff;
+            padding: 30px;
+            border-radius: 15px;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+            margin-bottom: 40px;
+        }
+
+        form h2 {
+            margin-top: 0;
+            color: #333;
+            font-size: 1.8em;
+            font-weight: bold;
+        }
+
+        form label {
+            display: block;
+            margin-bottom: 8px;
+            color: #333;
+            font-size: 1.1em;
+        }
+
+        form input {
+            width: calc(100% - 22px);
+            padding: 12px;
+            margin-bottom: 20px;
+            border: 1px solid #ddd;
+            border-radius: 8px;
+            font-size: 1em;
+            transition: border-color 0.3s ease;
+        }
+
+        form input:focus {
+            border-color: #1db954;
+            outline: none;
+        }
+
+        form button {
+            background-color: #1db954;
+            color: #fff;
+            border: none;
+            padding: 12px 25px;
+            border-radius: 8px;
+            cursor: pointer;
+            font-size: 1.2em;
+            transition: background-color 0.3s ease;
+        }
+
+        form button:hover {
+            background-color: #17a04e;
+        }
+
+        .playlist-container {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 20px;
+            margin-top: 20px;
+        }
+
+        .playlist-section {
+            flex: 1;
+            min-width: 300px;
+            background-color: #fff;
+            padding: 20px;
+            border-radius: 15px;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+        }
+
+        .playlist-section h2 {
+            margin-top: 0;
+            color: #1db954;
+            font-size: 1.6em;
+            font-weight: bold;
+        }
+
+        .playlist-section ul {
+            list-style-type: none;
+            padding: 0;
+            margin: 0;
+        }
+
+        .playlist-section li {
+            padding: 15px;
+            margin-bottom: 15px;
+            background-color: #f9f9f9;
+            border-radius: 8px;
+            display: flex;
+            flex-direction: column;
+            align-items: flex-start;
+            position: relative;
+            transition: background-color 0.3s ease;
+        }
+
+        .playlist-section li:hover {
+            background-color: #f0f0f0;
+        }
+
+        .favorite {
+            color: #e60023;
+        }
+
+        .audio-player {
+            display: inline-block;
+            margin-top: 10px;
+            width: 100%;
+            max-width: 300px;
+        }
+
+        .video-container {
+            text-align: center;
+            margin-top: 10px;
+            width: 100%;
+        }
+
+        iframe {
+            border: none;
+            border-radius: 15px;
+            width: 100%;
+            max-width: 560px;
+            height: 315px;
+        }
+
+        @media (max-width: 768px) {
+            .playlist-container {
+                flex-direction: column;
+            }
+
+            .playlist-section {
+                width: 100%;
+                margin-bottom: 20px;
+            }
+        }
+    </style>
 </head>
 <body>
     <header>
@@ -19,7 +196,6 @@
             <h2>Criação de Playlist com Base no Clima</h2>
             <label for="location">Localização:</label>
             <input type="text" id="location" name="location" placeholder="Ex: São Paulo" required>
-            
             <button type="submit">Criar Playlist</button>
         </form>
         
@@ -27,118 +203,70 @@
         <div id="playlist-result">
             <!-- Resultados serão exibidos aqui -->
         </div>
+
+        <h3>Minha Playlist</h3>
+        <div class="playlist-container">
+            <!-- Músicas Mais Ouvidas -->
+            <div class="playlist-section">
+                <h2>Músicas Mais Ouvidas</h2>
+                <ul>
+                    <li>
+                        Música 1 <span>🎵</span>
+                        <div class="video-container">
+                            <iframe src="https://www.youtube.com/embed/M2_7WerxGAM" 
+                                    title="Billie Eilish - The Making of 'CHIHIRO' (Vevo Footnotes)" frameborder="0" 
+                                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; 
+                                    picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" 
+                                    allowfullscreen>
+                            </iframe>
+                        </div>
+                    </li>
+                    <li>
+                        Música 2 <span>🎵</span>
+                        <div class="video-container">
+                            <iframe src="https://www.youtube.com/embed/KLbzKFCOXfs" 
+                                    title="Sabrina Carpenter - Taste (Me Too)" frameborder="0" 
+                                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; 
+                                    picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" 
+                                    allowfullscreen>
+                            </iframe>
+                        </div>
+                    </li>
+                    <li>Música 3 <span>🎵</span>
+                        <audio class="audio-player" controls>
+                            <source src="URL_DA_MUSICA_3" type="audio/mpeg">
+                            Seu navegador não suporta o elemento de áudio.
+                        </audio>
+                    </li>
+                </ul>
+            </div>
+
+            <!-- Músicas Menos Ouvidas -->
+            <div class="playlist-section">
+                <h2>Músicas Menos Ouvidas</h2>
+                <ul>
+                    <li>Música 4 <span>🎧</span></li>
+                    <li>Música 5 <span>🎧</span></li>
+                    <li>Música 6 <span>🎧</span></li>
+                </ul>
+            </div>
+
+            <!-- Músicas Curtidas -->
+            <div class="playlist-section">
+                <h2>Músicas Curtidas</h2>
+                <ul>
+                    <li>Música 7 <span class="favorite">❤️</span></li>
+                    <li>Música 8 <span class="favorite">❤️</span></li>
+                    <li>Música 9 <span class="favorite">❤️</span></li>
+                </ul>
+            </div>
+        </div>
     </main>
     <script src="script.js"></script>
 </body>
 </html>
 
-<!DOCTYPE html>
-<html lang="pt-br">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Playlist Personalizada</title>
-    <style>
-        body {
-            font-family: Arial, sans-serif;
-            background-color: #f3f4f6;
-            margin: 0;
-            padding: 20px;
-        }
 
-        h1 {
-            text-align: center;
-            color: #333;
-        }
 
-        .playlist-container {
-            display: flex;
-            justify-content: space-between;
-            margin-top: 40px;
-        }
 
-        .playlist-section {
-            width: 30%;
-            background-color: #fff;
-            padding: 20px;
-            border-radius: 8px;
-            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-        }
 
-        .playlist-section h2 {
-            margin-top: 0;
-            color: #ff8c00;
-        }
-
-        .playlist-section ul {
-            list-style-type: none;
-            padding: 0;
-        }
-
-        .playlist-section li {
-            padding: 8px;
-            margin-bottom: 10px;
-            background-color: #f0f0f0;
-            border-radius: 4px;
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-        }
-
-        .playlist-section li:hover {
-            background-color: #e2e2e2;
-        }
-
-        .favorite {
-            color: red;
-        }
-
-        /* Estilos para dispositivos móveis */
-        @media (max-width: 768px) {
-            .playlist-container {
-                flex-direction: column;
-            }
-
-            .playlist-section {
-                width: 100%;
-                margin-bottom: 20px;
-            }
-        }
-    </style>
-</head>
-<body>
-    <h1>Minha Playlist</h1>
-
-    <div class="playlist-container">
-        <!-- Músicas Mais Ouvidas -->
-        <div class="playlist-section">
-            <h2>Músicas Mais Ouvidas</h2>
-            <ul>
-                <li>Música 1 <span>🎵</span></li>
-                <li>Música 2 <span>🎵</span></li>
-                <li>Música 3 <span>🎵</span></li>
-            </ul>
-        </div>
-
-        <!-- Músicas Menos Ouvidas -->
-        <div class="playlist-section">
-            <h2>Músicas Menos Ouvidas</h2>
-            <ul>
-                <li>Música 4 <span>🎧</span></li>
-                <li>Música 5 <span>🎧</span></li>
-                <li>Música 6 <span>🎧</span></li>
-            </ul>
-        </div>
-
-        <!-- Músicas Curtidas -->
-        <div class="playlist-section">
-            <h2>Músicas Curtidas</h2>
-            <ul>
-                <li>Música 7 <span class="favorite">❤️</span></li>
-                <li>Música 8 <span class="favorite">❤️</span></li>
-                <li>Música 9 <span class="favorite">❤️</span></li>
-            </ul>
-        </div>
-    </div>
-</body>
-</html>
